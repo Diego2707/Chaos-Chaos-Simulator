@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>I CAN DO ANYTHING</title>
+        <script src="gl-matrix.js"></script>
+        <script src="runtime.js"></script>
+        <script src="shaders.js"></script>
+        <script src="setup.js"></script>
+        <script src="variables.js"></script>
+        <script src="object.js"></script>
+        <script src="utility.js"></script>
+        <script src="keyInput.js"></script>
+        <style>
+            img {
+                display: none;
+            }
+        </style>
+    </head>
+
+    <body onload="initGame();">
+        <canvas id="screen" width=700 height=500 style="border: 1px solid black">Your Browser does not support HTML5.</canvas>
+
+        <!--screw it I'm loading all the images in html-->
+        <img src="resources/tempImage.png" style="display: none;">
+        <!--Jevil Images-->
+        <img src="resources/Jevil/jevil_main.png">
+        <img src="resources/Jevil/jevil_main_laugh.png">
+        <img src="resources/Jevil/jevil_main_tired.png">
+        <img src="resources/Jevil/jump_anim/forward/jevil_frame1.png">
+        <img src="resources/Jevil/jump_anim/forward/jevil_frame2.png">
+        <img src="resources/Jevil/jump_anim/forward/jevil_frame3.png">
+        <img src="resources/Jevil/jump_anim/forward/jevil_frame4.png">
+        <img src="resources/Jevil/jump_anim/forward/jevil_frame5.png">
+        <img src="resources/Jevil/jump_anim/forward/jevil_frame6.png">
+        <img src="resources/Jevil/jump_anim/forward/jevil_frame7.png">
+        <img src="resources/Jevil/jump_anim/forward/jevil_frame8.png">
+        <img src="resources/Jevil/damage/chain_link.png">
+        <img src="resources/Jevil/damage/jevil_body.png">
+        <img src="resources/Jevil/damage/jevil_head1.png">
+        <img src="resources/Jevil/damage/jevil_head2.png">
+        <img src="resources/Jevil/damage/jevil_head3.png">
+        <img src="resources/Jevil/damage/jevil_head4.png">
+        <img src="resources/Jevil/teleport/jevil_left1.png">
+        <img src="resources/Jevil/teleport/jevil_left2.png">
+        <img src="resources/Jevil/teleport/jevil_right1.png">
+        <img src="resources/Jevil/teleport/jevil_right2.png">
+    </body>
+
+    <!--                                                                                                                                                           
+.--.                                                                          
+|__|                                                                          
+.--.                                                                          
+|  |                                                                          
+|  |                                                                          
+|  |                                                                          
+|  |   _..._                                                                  
+|__|.-'_..._''.                                                               
+  .' .'      '.\             _..._                                            
+ / .'                      .'     '.                                          
+. '                       .   .-.   .                                         
+| |                 __    |  '   '  |                                         
+| |              .:--.'.  |  |   |  |                                         
+. '             / |   \ | |  |   |  |                                         
+ \ '.          .`" __ | | |  |   |  |                                         
+  '. `._____.-'/ .'.''| | |  |   |  |                                         
+    `-.______ / / /   | |_|  |   |  |                                         
+             `  \ \._,\ '/|  |   |  |                                         
+                 `--'  `" '--'   '--'                                         
+                 .-'''-.                                                      
+_______         '   _    \                                                    
+\  ___ `'.    /   /` '.   \                                                   
+ ' |--.\  \  .   |     \  '                                                   
+ | |    \  ' |   '      |  '                                                  
+ | |     |  '\    \     / /                                                   
+ | |     |  | `.   ` ..' /                                                    
+ | |     ' .'    '-...-'`                                                     
+ | |___.' /' _..._                         .        .--.   _..._              
+/_______.'/.'     '..-.          .-      .'|        |__| .'     '.   .--./)   
+\_______|/.   .-.   .\ \        / /  .| <  |        .--..   .-.   . /.''\\    
+    __    |  '   '  | \ \      / / .' |_ | |        |  ||  '   '  || |  | |   
+ .:--.'.  |  |   |  |  \ \    / /.'     || | .'''-. |  ||  |   |  | \`-' /    
+/ |   \ | |  |   |  |   \ \  / /'--.  .-'| |/.'''. \|  ||  |   |  | /("'`     
+`" __ | | |  |   |  |    \ `  /    |  |  |  /    | ||  ||  |   |  | \ '---.   
+ .'.''| | |  |   |  |     \  /     |  |  | |     | ||__||  |   |  |  /'""'.\  
+/ /   | |_|  |   |  |     / /      |  '.'| |     | |    |  |   |  | ||     || 
+\ \._,\ '/|  |   |  | |`-' /       |   / | '.    | '.   |  |   |  | \'. __//  
+ `--'  `" '--'   '--'  '..'        `'-'  '---'   '---'  '--'   '--'  `'---'  
+-->
+</html>
