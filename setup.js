@@ -48,28 +48,46 @@ var glSetup = function()
 
 var loadImages = function()
 {
-    images = 
+    loadImage("resources/tempImage.png", "temp");
+
+    loadImage("resources/Jevil_Sprites/spr_joker_main/0.png", "jevil_main");
+    loadImage("resources/Jevil_Sprites/spr_joker_main/1.png", "jevil_main_laugh");
+    loadImage("resources/Jevil_Sprites/spr_joker_tired.png", "jevil_main_tired");
+    loadImage("resources/Jevil_Sprites/spr_joker_dance/0.png", "jevil_jump1");
+    loadImage("resources/Jevil_Sprites/spr_joker_dance/1.png", "jevil_jump2");
+    loadImage("resources/Jevil_Sprites/spr_joker_dance/2.png", "jevil_jump3");
+    loadImage("resources/Jevil_Sprites/spr_joker_dance/3.png", "jevil_jump4");
+    loadImage("resources/Jevil_Sprites/spr_joker_dance/4.png", "jevil_jump5");
+    loadImage("resources/Jevil_Sprites/spr_joker_dance/5.png", "jevil_jump6");
+    loadImage("resources/Jevil_Sprites/spr_joker_dance/6.png", "jevil_jump7");
+    loadImage("resources/Jevil_Sprites/spr_joker_dance/7.png", "jevil_jump8");
+    loadImage("resources/Jevil_Sprites/spr_jokerchain.png", "chain_link");
+    loadImage("resources/Jevil_Sprites/spr_jokerbody.png", "jevil_damage_body");
+    loadImage("resources/Jevil_Sprites/spr_jokerhead/0.png", "jevil_damage_head1");
+    loadImage("resources/Jevil_Sprites/spr_jokerhead/1.png", "jevil_damage_head2");
+    loadImage("resources/Jevil_Sprites/spr_jokerhead/2.png", "jevil_damage_head3");
+    loadImage("resources/Jevil_Sprites/spr_jokerhead/3.png", "jevil_damage_head4");
+    loadImage("resources/Jevil_Sprites/spr_joker_teleport/0.png", "jevil_tele_left1");
+    loadImage("resources/Jevil_Sprites/spr_joker_teleport/1.png", "jevil_tele_left2");
+    loadImage("resources/Jevil_Sprites/spr_joker_teleport_r/0.png", "jevil_tele_right1");
+    loadImage("resources/Jevil_Sprites/spr_joker_teleport_r/1.png", "jevil_tele_right2");
+
+   console.log(images);
+}
+
+var loadImage = function(path, name)
+{
+    var img = new Image();
+    img.src = path;
+    images[name] = gl.createTexture();
+    img.onload = function()
     {
-        jevil_main:         loadImage("resources/Jevil_Sprites/spr_joker_main/0.png"),
-        jevil_main_laugh:   loadImage("resources/Jevil_Sprites/spr_joker_main/1.png"),
-        jevil_main_tired:   loadImage("resources/Jevil_Sprites/spr_joker_tired.png"),              
-        jevil_jump1:        loadImage("resources/Jevil_Sprites/spr_joker_dance/0.png"),
-        jevil_jump2:        loadImage("resources/Jevil_Sprites/spr_joker_dance/1.png"),
-        jevil_jump3:        loadImage("resources/Jevil_Sprites/spr_joker_dance/2.png"),
-        jevil_jump4:        loadImage("resources/Jevil_Sprites/spr_joker_dance/3.png"),
-        jevil_jump5:        loadImage("resources/Jevil_Sprites/spr_joker_dance/4.png"),
-        jevil_jump6:        loadImage("resources/Jevil_Sprites/spr_joker_dance/5.png"),
-        jevil_jump7:        loadImage("resources/Jevil_Sprites/spr_joker_dance/6.png"),
-        jevil_jump8:        loadImage("resources/Jevil_Sprites/spr_joker_dance/7.png"),
-        chain_link:         loadImage("resources/Jevil_Sprites/spr_jokerchain.png"),
-        jevil_damage_body:  loadImage("resources/Jevil_Sprites/spr_jokerbody.png"),
-        jevil_damage_head1: loadImage("resources/Jevil_Sprites/spr_jokerhead/0.png"),
-        jevil_damage_head2: loadImage("resources/Jevil_Sprites/spr_jokerhead/1.png"),
-        jevil_damage_head3: loadImage("resources/Jevil_Sprites/spr_jokerhead/2.png"),
-        jevil_damage_head4: loadImage("resources/Jevil_Sprites/spr_jokerhead/3.png"),
-        jevil_tele_left1:   loadImage("resources/Jevil_Sprites/spr_joker_teleport/0.png"),
-        jevil_tele_left2:   loadImage("resources/Jevil_Sprites/spr_joker_teleport/1.png"),
-        jevil_tele_right1:  loadImage("resources/Jevil_Sprites/spr_joker_teleport_r/0.png"),
-        jevil_tele_right2:  loadImage("resources/Jevil_Sprites/spr_joker_teleport_r/1.png"),
+        gl.bindTexture(gl.TEXTURE_2D, images[name]);
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+        gl.bindTexture(gl.TEXTURE_2D, null);
     }
 }

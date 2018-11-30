@@ -58,3 +58,6 @@ var keys =
     Z: false,
     X: false
 }
+
+//menu information
+var menus = {};

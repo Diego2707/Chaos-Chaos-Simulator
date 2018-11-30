@@ -19,7 +19,8 @@ class object2D
         this.animations = new Array(); //initialize a new animations array
 
         //temp texture, delete later
-        this.image = loadImage("resources/tempImage.png");
+        
+        this.image = images.temp;
     }
 
     //any tick-based code goes here
