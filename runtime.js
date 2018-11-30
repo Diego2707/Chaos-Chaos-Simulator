@@ -18,75 +18,64 @@ var initGame = function()
     
     setup();
 
+    //TEST DATA
+
     testObj = new object2D(250, 150, 0, 300, 300);
     //testObj2 = new object2D(70, 300, 0, 40, 60);
 
     var testAnim = [
-        images.jevil_jump1,
-        images.jevil_jump2,
-        images.jevil_jump3,
-        images.jevil_jump4,
-        images.jevil_jump5,
-        images.jevil_jump6,
-        images.jevil_jump7,
-        images.jevil_jump8,
+        {Img: images.jevil_jump1, Tick: 3},
+        {Img: images.jevil_jump2, Tick: 3},
+        {Img: images.jevil_jump3, Tick: 3},
+        {Img: images.jevil_jump4, Tick: 3},
+        {Img: images.jevil_jump5, Tick: 3},
+        {Img: images.jevil_jump6, Tick: 3},
+        {Img: images.jevil_jump7, Tick: 3},
+        {Img: images.jevil_jump8, Tick: 3}
     ];
     
     var testAnim2 = [
-        images.jevil_tele_right1,
-        images.jevil_tele_right2,
-    ]
+        {Img: images.jevil_tele_right1, Tick: 5},
+        {Img: images.jevil_tele_right2, Tick: 5}
+    ];
 
-    testObj.addAnim("test", testAnim, loopTypes.LOOP);
+    testObj.addAnim("test", testAnim, loopTypes.SINGLE, "test2");
     testObj.addAnim("test2", testAnim2, loopTypes.STILL);
 
     testObj.setAnim("test2");
+
+    //END TEST DATA
 
     //start the game loop
     runGame();
     requestAnimationFrame(runGame);
 }
 
+//main tick loop
 var runGame = function()
 {
     requestAnimationFrame(runGame);
-    update();
-    render();
-}
-
-var update = function()
-{
+    //calc new dt
     var dt = Date.now() - oldTime;
     
-    if(dt >= 70)
+    if(dt >= 33) //loop at 30fps/ups
     {
         oldTime = Date.now();
-        testObj.update();
+        update(dt);
+        render(dt);
     }
 }
 
-var render = function()
+var update = function(dt)
 {
-    
-    
+    testObj.update();
+}
+
+var render = function(dt)
+{
     gl.clearColor(0.25, 0.42, 0.48, 1.0);
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
-    
-    var today = new Date();
-
-    
-    //mat4.fromScaling(modelMatrix, [200, 300, 1]);
-    //var move = new Float32Array(16);
-    //testObj2.xpos = 300 + today.getMilliseconds()/2;
+    //TEST
     testObj.render();
-    //testObj2.render();
 }
-
-/*
- mat4.identity(dest);
- mat4.translate(dest, vec);
- let quatMat = mat4.create();
- quat4.toMat4(quat, quatMat);
- mat4.multiply(dest, quatMat)
-*/
