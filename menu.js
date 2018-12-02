@@ -10,8 +10,7 @@ class Menu
 
     render() //temp code, will replace once layout is made
     {
-        textCtx.font = "30px Test";
-        
+        textCtx.font = "bold 30px Pixel";
         for(var i = 0; i < this.currentMenu.Options.length; i++)
         {
             if(i == this.selectedOption)
@@ -20,7 +19,6 @@ class Menu
                 textCtx.fillStyle = "White";
             textCtx.fillText(this.currentMenu.Options[i].Text, 50, 50 + (40 * i));
         }
-        
     }
 
     update()
@@ -36,7 +34,6 @@ class Menu
             else if(keys.DOWN)
                 this.selectedOption++;
             this.selectedOption = Math.abs(this.selectedOption) % this.currentMenu.Options.length;
-            console.log(this.selectedOption);
         }
         if(this.currentMenu.Options[this.selectedOption].Dest != null && keys.Z)
             this.setMenu(this.currentMenu.Options[this.selectedOption].Dest);
