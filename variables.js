@@ -34,10 +34,6 @@ var loopTypes =
     LOOP: 2
 }
 
-//testing
-var testObj;
-var testObj2;
-
 //keypresses
 var keyNumbers = 
 {
@@ -60,4 +56,13 @@ var keys =
 }
 
 //menu information
-var menus = {};
+var menu;
+
+var text;
+var textCtx;
+
+//testing
+var testObj;
+var testObj2;
+
+var text;

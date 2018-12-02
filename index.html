@@ -11,15 +11,27 @@
         <script src="variables.js"></script>
         <script src="object.js"></script>
         <script src="keyInput.js"></script>
+        <script src="menu.js"></script>
         <style>
+            @font-face {font-family: Test; src: url("dpcomic.ttf")}
+
             img {
                 display: none;
+            }
+
+            #text {
+                position: absolute;
+                left: 0px;
+                right: 0px;
+                z-index: 10;
+                font-family: Test;
             }
         </style>
     </head>
 
     <body onload="initGame();">
         <canvas id="screen" width=640 height=480 style="border: 1px solid black">Your Browser does not support HTML5.</canvas>
+        <canvas id="text" width=640 height=480></canvas>
     </body>
 
     <!--                                                                                                                                                           

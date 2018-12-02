@@ -2,6 +2,10 @@ var setup = function()
 {
     glSetup();
     loadImages();
+    setupMenus();
+
+    text = document.getElementById("text");
+    textCtx = text.getContext("2d");
 }
 
 var glSetup = function()
@@ -48,31 +52,38 @@ var glSetup = function()
 
 var loadImages = function()
 {
-    loadImage("resources/tempImage.png", "temp");
+    loadImage("resources/images/tempImage.png", "temp");
 
-    loadImage("resources/Jevil_Sprites/spr_joker_main/0.png", "jevil_main");
-    loadImage("resources/Jevil_Sprites/spr_joker_main/1.png", "jevil_main_laugh");
-    loadImage("resources/Jevil_Sprites/spr_joker_tired.png", "jevil_main_tired");
-    loadImage("resources/Jevil_Sprites/spr_joker_dance/0.png", "jevil_jump1");
-    loadImage("resources/Jevil_Sprites/spr_joker_dance/1.png", "jevil_jump2");
-    loadImage("resources/Jevil_Sprites/spr_joker_dance/2.png", "jevil_jump3");
-    loadImage("resources/Jevil_Sprites/spr_joker_dance/3.png", "jevil_jump4");
-    loadImage("resources/Jevil_Sprites/spr_joker_dance/4.png", "jevil_jump5");
-    loadImage("resources/Jevil_Sprites/spr_joker_dance/5.png", "jevil_jump6");
-    loadImage("resources/Jevil_Sprites/spr_joker_dance/6.png", "jevil_jump7");
-    loadImage("resources/Jevil_Sprites/spr_joker_dance/7.png", "jevil_jump8");
-    loadImage("resources/Jevil_Sprites/spr_jokerchain.png", "chain_link");
-    loadImage("resources/Jevil_Sprites/spr_jokerbody.png", "jevil_damage_body");
-    loadImage("resources/Jevil_Sprites/spr_jokerhead/0.png", "jevil_damage_head1");
-    loadImage("resources/Jevil_Sprites/spr_jokerhead/1.png", "jevil_damage_head2");
-    loadImage("resources/Jevil_Sprites/spr_jokerhead/2.png", "jevil_damage_head3");
-    loadImage("resources/Jevil_Sprites/spr_jokerhead/3.png", "jevil_damage_head4");
-    loadImage("resources/Jevil_Sprites/spr_joker_teleport/0.png", "jevil_tele_left1");
-    loadImage("resources/Jevil_Sprites/spr_joker_teleport/1.png", "jevil_tele_left2");
-    loadImage("resources/Jevil_Sprites/spr_joker_teleport_r/0.png", "jevil_tele_right1");
-    loadImage("resources/Jevil_Sprites/spr_joker_teleport_r/1.png", "jevil_tele_right2");
+    loadImage("resources/images/Jevil_Sprites/spr_joker_main/0.png", "jevil_main");
+    loadImage("resources/images/Jevil_Sprites/spr_joker_main/1.png", "jevil_main_laugh");
+    loadImage("resources/images/Jevil_Sprites/spr_joker_tired.png", "jevil_main_tired");
+    loadImage("resources/images/Jevil_Sprites/spr_joker_dance/0.png", "jevil_jump1");
+    loadImage("resources/images/Jevil_Sprites/spr_joker_dance/1.png", "jevil_jump2");
+    loadImage("resources/images/Jevil_Sprites/spr_joker_dance/2.png", "jevil_jump3");
+    loadImage("resources/images/Jevil_Sprites/spr_joker_dance/3.png", "jevil_jump4");
+    loadImage("resources/images/Jevil_Sprites/spr_joker_dance/4.png", "jevil_jump5");
+    loadImage("resources/images/Jevil_Sprites/spr_joker_dance/5.png", "jevil_jump6");
+    loadImage("resources/images/Jevil_Sprites/spr_joker_dance/6.png", "jevil_jump7");
+    loadImage("resources/images/Jevil_Sprites/spr_joker_dance/7.png", "jevil_jump8");
+    loadImage("resources/images/Jevil_Sprites/spr_jokerchain.png", "chain_link");
+    loadImage("resources/images/Jevil_Sprites/spr_jokerbody.png", "jevil_damage_body");
+    loadImage("resources/images/Jevil_Sprites/spr_jokerhead/0.png", "jevil_damage_head1");
+    loadImage("resources/images/Jevil_Sprites/spr_jokerhead/1.png", "jevil_damage_head2");
+    loadImage("resources/images/Jevil_Sprites/spr_jokerhead/2.png", "jevil_damage_head3");
+    loadImage("resources/images/Jevil_Sprites/spr_jokerhead/3.png", "jevil_damage_head4");
+    loadImage("resources/images/Jevil_Sprites/spr_joker_teleport/0.png", "jevil_tele_left1");
+    loadImage("resources/images/Jevil_Sprites/spr_joker_teleport/1.png", "jevil_tele_left2");
+    loadImage("resources/images/Jevil_Sprites/spr_joker_teleport_r/0.png", "jevil_tele_right1");
+    loadImage("resources/images/Jevil_Sprites/spr_joker_teleport_r/1.png", "jevil_tele_right2");
+}
 
-   console.log(images);
+var setupMenus = function()
+{
+    menu = new Menu();
+    menu.addMenu("test1", [{Text: "To test 2", Dest: "test2"}, {Text: "To test 3", Dest: "test3"}]);
+    menu.addMenu("test2", [{Text: "empty"}], {Name: "test1", Select: 0});
+    menu.addMenu("test3", [{Text: "empty"}], {Name: "test1", Select: 1});
+    menu.setMenu("test1");
 }
 
 var loadImage = function(path, name)

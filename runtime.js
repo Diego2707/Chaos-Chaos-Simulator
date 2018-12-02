@@ -69,13 +69,16 @@ var runGame = function()
 var update = function(dt)
 {
     testObj.update();
+    menu.update();
 }
 
 var render = function(dt)
 {
-    gl.clearColor(0.25, 0.42, 0.48, 1.0);
-    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+    gl.clearColor(0.25, 0.42, 0.48, 1.0); //set clear color for main canvas
+    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT); //clear color and depth information
+    textCtx.clearRect(0, 0, textCtx.canvas.width, textCtx.canvas.height); //clear text
 
     //TEST
     testObj.render();
+    menu.render();   
 }
