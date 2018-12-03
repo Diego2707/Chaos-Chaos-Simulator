@@ -12,6 +12,7 @@ class object2D
         this.height = height;
         this.animationFrame = 0;
         this.animTick = 0; //tick between frame change
+        this.color = [1, 1, 1, 1];
 
         //mark variables for later use
         this.currentAnim = null;
@@ -102,10 +103,14 @@ class object2D
         mat4.ortho(projMatrix, 0.0, -640.0, 480.0, 0.0, -100, 1000); //projection. deltarune is in ortho, so no need for fov
         mat4.fromRotationTranslationScale(modelMatrix, rot, [this.x, this.y, this.z], [this.width, this.height, 0]); //main movement, alter object directly
         
+        //color information
+        var colorUniformLoc = gl.getUniformLocation(mainProgram, "color");
+
         //set uniforms
         gl.uniformMatrix4fv(modelUniformLoc, gl.FALSE, modelMatrix);
         gl.uniformMatrix4fv(viewUniformLoc, gl.FALSE, viewMatrix);
         gl.uniformMatrix4fv(projUniformLoc, gl.FALSE, projMatrix);
+        gl.uniform4fv(colorUniformLoc, this.color);
 
         //set working texture and buffer
         gl.bindBuffer(gl.ARRAY_BUFFER, boxVBO);

@@ -18,34 +18,6 @@ var initGame = function()
     
     setup();
 
-    //TEST DATA
-
-    testObj = new object2D(250, 150, 0, 300, 300);
-    //testObj2 = new object2D(70, 300, 0, 40, 60);
-
-    var testAnim = [
-        {Img: images.jevil_jump1, Tick: 3},
-        {Img: images.jevil_jump2, Tick: 3},
-        {Img: images.jevil_jump3, Tick: 3},
-        {Img: images.jevil_jump4, Tick: 3},
-        {Img: images.jevil_jump5, Tick: 3},
-        {Img: images.jevil_jump6, Tick: 3},
-        {Img: images.jevil_jump7, Tick: 3},
-        {Img: images.jevil_jump8, Tick: 3}
-    ];
-    
-    var testAnim2 = [
-        {Img: images.jevil_tele_right1, Tick: 5},
-        {Img: images.jevil_tele_right2, Tick: 5}
-    ];
-
-    testObj.addAnim("test", testAnim, loopTypes.SINGLE, "test2");
-    testObj.addAnim("test2", testAnim2, loopTypes.STILL);
-
-    testObj.setAnim("test2");
-
-    //END TEST DATA
-
     //start the game loop
     runGame();
     requestAnimationFrame(runGame);
@@ -56,19 +28,24 @@ var runGame = function()
 {
     requestAnimationFrame(runGame);
     //calc new dt
-    var dt = Date.now() - oldTime;
-    
-    if(dt >= 33) //loop at 30fps/ups
+    if(imagesLoading == 0)
     {
-        oldTime = Date.now();
-        update(dt);
-        render(dt);
+        var dt = Date.now() - oldTime;
+        
+        if(dt >= 33) //loop at 30fps/ups
+        {
+            oldTime = Date.now();
+            update(dt);
+            render(dt);
+        }
     }
 }
 
 var update = function(dt)
 {
-    testObj.update();
+    for(var i = 0; i < objects.length; i++)
+        for(var j = 0; j < objects[i].length; j++)
+            objects[i][j].update();
     menu.update();
 }
 
@@ -79,6 +56,8 @@ var render = function(dt)
     textCtx.clearRect(0, 0, textCtx.canvas.width, textCtx.canvas.height); //clear text
 
     //TEST
-    testObj.render();
-    menu.render();   
+    for(var i = 0; i < objects.length; i++)
+        for(var j = 0; j < objects[i].length; j++)
+            objects[i][j].render();
+    menu.render();
 }

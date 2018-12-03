@@ -21,7 +21,17 @@ var squareVertices =
     1.0, 0.0, 0.0,   1, 0
 ];
 
+//objects
+var objects = 
+[
+    [], //GUI
+    [], //Character
+    [], //Particles
+]
+
 //animation information
+
+var imagesLoading = 0;
 
 var images = {};
 
@@ -63,6 +73,5 @@ var textCtx;
 
 //testing
 var testObj;
-var testObj2;
 
 var text;

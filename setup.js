@@ -3,6 +3,7 @@ var setup = function()
     glSetup();
     loadImages();
     setupMenus();
+    setupObjects();
 
     text = document.getElementById("text");
     textCtx = text.getContext("2d");
@@ -16,8 +17,10 @@ var glSetup = function()
 
     //gl.enable(gl.CULL_FACE);
     gl.enable(gl.DEPTH_TEST);
+    gl.enable(gl.BLEND);
     //gl.frontFace(gl.CCW);
     //gl.cullFace(gl.BACK);
+    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
 
     //setup shaders
     mainProgram = linkProgram(loadShader(primaryVertexShaderCode, gl.VERTEX_SHADER, gl), loadShader(primaryFragmentShaderCode, gl.FRAGMENT_SHADER, gl), gl);
@@ -53,6 +56,9 @@ var glSetup = function()
 var loadImages = function()
 {
     loadImage("resources/images/tempImage.png", "temp");
+    loadImage("resources/images/blank.png", "blank");
+
+    loadImage("resources/images/GUI Icons/spr_tpmeter.png", "tp_meter");
 
     loadImage("resources/images/Jevil_Sprites/spr_joker_main/0.png", "jevil_main");
     loadImage("resources/images/Jevil_Sprites/spr_joker_main/1.png", "jevil_main_laugh");
@@ -88,6 +94,7 @@ var setupMenus = function()
 
 var loadImage = function(path, name)
 {
+    imagesLoading++;
     var img = new Image();
     img.src = path;
     images[name] = gl.createTexture();
@@ -100,5 +107,44 @@ var loadImage = function(path, name)
         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
         gl.bindTexture(gl.TEXTURE_2D, null);
+        imagesLoading--;
     }
+}
+
+var setupObjects = function()
+{
+    var testAnim = [
+        {Img: images.jevil_jump1, Tick: 3},
+        {Img: images.jevil_jump2, Tick: 3},
+        {Img: images.jevil_jump3, Tick: 3},
+        {Img: images.jevil_jump4, Tick: 3},
+        {Img: images.jevil_jump5, Tick: 3},
+        {Img: images.jevil_jump6, Tick: 3},
+        {Img: images.jevil_jump7, Tick: 3},
+        {Img: images.jevil_jump8, Tick: 3}
+    ];
+    
+    var testAnim2 = [
+        {Img: images.jevil_tele_right1, Tick: 5},
+        {Img: images.jevil_tele_right2, Tick: 5}
+    ];
+
+    var temp = [
+        {Img: images.tp_meter, Tick: 1}
+    ];
+
+    objects[1].push(setupSingleObject(30, 200, 0, 30, 70, [{Name: "sprite", Frames: temp, Type: loopTypes.STILL, Exit: null}], "sprite"));
+
+    objects[1].push(setupSingleObject(250, 150, 0, 300, 200, [{Name: "test", Frames: testAnim, Type: loopTypes.SINGLE, Exit: "test2"}, {Name: "test2", Frames: testAnim2, Type: loopTypes.STILL, Exit: null}], "test2"))
+}
+
+var setupSingleObject = function(x, y, z, width, height, animations, currentAnim = null)
+{
+    var obj = new object2D(x, y, z, width, height);
+    animations.forEach(element => {
+        obj.addAnim(element.Name, element.Frames, element.Type, element.Exit);
+    });
+    if(currentAnim != null)
+        obj.setAnim(currentAnim);
+    return obj;
 }
