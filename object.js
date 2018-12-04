@@ -27,21 +27,6 @@ class object2D
     //any tick-based code goes here
     update()
     {
-        //these keys are just tests, a different movement system will be used in the final
-        if(keys.UP)
-            this.y--;
-        if(keys.DOWN)
-            this.y++;
-        if(keys.LEFT)
-            this.x--;
-        if(keys.RIGHT)
-            this.x++;
-
-        if(keys.Z)
-            this.setAnim("test");
-        if(keys.X)
-            this.setAnim("test2");
-
         //update the animation
         if(this.currentAnim != null)
         {

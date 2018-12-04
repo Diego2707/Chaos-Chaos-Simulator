@@ -2,12 +2,21 @@ var setup = function()
 {
     glSetup();
     loadImages();
-    setupMenus();
-    setupObjects();
 
+    waitForImageLoad();
+
+    setupObjects();
+    setupMenus();
     text = document.getElementById("text");
     textCtx = text.getContext("2d");
+
+    loadFinished = true;
 }
+
+function waitForImageLoad(){
+    if (imagesLoading != 0)
+        setTimeout(waitForImageLoad , 100);
+  }
 
 var glSetup = function()
 {
@@ -81,6 +90,68 @@ var loadImages = function()
     loadImage("resources/images/Jevil_Sprites/spr_joker_teleport/1.png", "jevil_tele_left2");
     loadImage("resources/images/Jevil_Sprites/spr_joker_teleport_r/0.png", "jevil_tele_right1");
     loadImage("resources/images/Jevil_Sprites/spr_joker_teleport_r/1.png", "jevil_tele_right2");
+
+    loadImage("resources/images/Kris_Sprites/spr_krisb_act/0.png", "kris_act1"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_act/1.png", "kris_act2"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_act/2.png", "kris_act3"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_act/3.png", "kris_act4"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_act/4.png", "kris_act5"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_act/5.png", "kris_act6"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_act/6.png", "kris_act7"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_act/7.png", "kris_act8"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_act/8.png", "kris_act9"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_act/8.png", "kris_act10"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_act/10.png", "kris_act11"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_actready/0.png", "kris_actready1"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_actready/1.png", "kris_actready2"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_attack/0.png", "kris_attack1"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_attack/1.png", "kris_attack2"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_attack/2.png", "kris_attack3"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_attack/3.png", "kris_attack4"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_attack/4.png", "kris_attack5"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_attack/5.png", "kris_attack6"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_attack/6.png", "kris_attack7"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_defend/0.png", "kris_defend1"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_defend/1.png", "kris_defend2"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_defend/2.png", "kris_defend3"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_defend/3.png", "kris_defend4"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_defend/4.png", "kris_defend5"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_defend/5.png", "kris_defend6"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_idle/0.png", "kris_idle1"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_idle/1.png", "kris_idle2"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_idle/2.png", "kris_idle3"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_idle/3.png", "kris_idle4"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_idle/4.png", "kris_idle5"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_idle/5.png", "kris_idle6"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_intro/0.png", "kris_intro1"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_intro/1.png", "kris_intro2"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_intro/2.png", "kris_intro3"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_intro/3.png", "kris_intro4"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_intro/4.png", "kris_intro5"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_intro/5.png", "kris_intro6"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_intro/6.png", "kris_intro7"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_intro/7.png", "kris_intro8"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_intro/8.png", "kris_intro9"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_intro/9.png", "kris_intro10"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_intro/10.png", "kris_intro11"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_intro/11.png", "kris_intro12"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_item/0.png", "kris_item1"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_item/1.png", "kris_item2"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_item/2.png", "kris_item3"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_item/3.png", "kris_item4"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_item/4.png", "kris_item5"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_item/5.png", "kris_item6"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_item/6.png", "kris_item7"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_pirouette/0.png", "kris_pirouette1"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_pirouette/1.png", "kris_pirouette2"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_pirouette/2.png", "kris_pirouette3"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_pirouette/3.png", "kris_pirouette4"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_pirouette/4.png", "kris_pirouette5"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_pirouette/5.png", "kris_pirouette6"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_attackready.png", "kris_attackready"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_defeat.png", "kris_defeat"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_hurt.png", "kris_hurt"),
+    loadImage("resources/images/Kris_Sprites/spr_krisb_itemready.png", "kris_itemready")
 }
 
 var setupMenus = function()
@@ -113,29 +184,16 @@ var loadImage = function(path, name)
 
 var setupObjects = function()
 {
-    var testAnim = [
-        {Img: images.jevil_jump1, Tick: 3},
-        {Img: images.jevil_jump2, Tick: 3},
-        {Img: images.jevil_jump3, Tick: 3},
-        {Img: images.jevil_jump4, Tick: 3},
-        {Img: images.jevil_jump5, Tick: 3},
-        {Img: images.jevil_jump6, Tick: 3},
-        {Img: images.jevil_jump7, Tick: 3},
-        {Img: images.jevil_jump8, Tick: 3}
-    ];
-    
-    var testAnim2 = [
-        {Img: images.jevil_tele_right1, Tick: 5},
-        {Img: images.jevil_tele_right2, Tick: 5}
-    ];
+    initAnims();
+    var blankImg = setSingleSpriteImg(images.blank);
+    objects[0].push(setupSingleObject(0, 365, 0, 640, 480, blankImg, "sprite"));
+    objects[0][objects[0].length-1].color = [0, 0, 0, 1];
+    objects[0].push(setupSingleObject(0, 362, 0, 640, 480, setSingleSpriteImg(images.blank), "sprite"));
+    objects[0][objects[0].length-1].color = [0.2, 0.13, 0.2, 1];
 
-    var temp = [
-        {Img: images.tp_meter, Tick: 1}
-    ];
-
-    objects[1].push(setupSingleObject(30, 200, 0, 30, 70, [{Name: "sprite", Frames: temp, Type: loopTypes.STILL, Exit: null}], "sprite"));
-
-    objects[1].push(setupSingleObject(250, 150, 0, 300, 200, [{Name: "test", Frames: testAnim, Type: loopTypes.SINGLE, Exit: "test2"}, {Name: "test2", Frames: testAnim2, Type: loopTypes.STILL, Exit: null}], "test2"))
+    //jevil x:477 y:134 to 124
+    objects[1].push(setupSingleObject(477, 138, 0, 46*2, 48*2, jevilAnims, "Main"));
+    objects[1].push(setupSingleObject(100, 100, 0, 63*2, 53*2, krisAnims, "Intro"));
 }
 
 var setupSingleObject = function(x, y, z, width, height, animations, currentAnim = null)
@@ -148,3 +206,4 @@ var setupSingleObject = function(x, y, z, width, height, animations, currentAnim
         obj.setAnim(currentAnim);
     return obj;
 }
+

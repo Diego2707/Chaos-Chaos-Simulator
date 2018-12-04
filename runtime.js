@@ -28,7 +28,7 @@ var runGame = function()
 {
     requestAnimationFrame(runGame);
     //calc new dt
-    if(imagesLoading == 0)
+    if(imagesLoading == 0 && loadFinished)
     {
         var dt = Date.now() - oldTime;
         
@@ -55,9 +55,12 @@ var render = function(dt)
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT); //clear color and depth information
     textCtx.clearRect(0, 0, textCtx.canvas.width, textCtx.canvas.height); //clear text
 
-    //TEST
     for(var i = 0; i < objects.length; i++)
         for(var j = 0; j < objects[i].length; j++)
             objects[i][j].render();
     menu.render();
+
+    textCtx.font = "bold 32px Pixel";
+    textCtx.fillStyle = "white";
+    textCtx.fillText("* LET THE GAMES BEGIN!".split("").join(String.fromCharCode(8201)), 36, 405);
 }

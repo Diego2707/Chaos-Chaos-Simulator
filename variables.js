@@ -31,6 +31,7 @@ var objects =
 
 //animation information
 
+var loadFinished = false;
 var imagesLoading = 0;
 
 var images = {};
