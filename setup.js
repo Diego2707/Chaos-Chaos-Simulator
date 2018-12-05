@@ -151,7 +151,58 @@ var loadImages = function()
     loadImage("resources/images/Kris_Sprites/spr_krisb_attackready.png", "kris_attackready"),
     loadImage("resources/images/Kris_Sprites/spr_krisb_defeat.png", "kris_defeat"),
     loadImage("resources/images/Kris_Sprites/spr_krisb_hurt.png", "kris_hurt"),
-    loadImage("resources/images/Kris_Sprites/spr_krisb_itemready.png", "kris_itemready")
+    loadImage("resources/images/Kris_Sprites/spr_krisb_itemready.png", "kris_itemready"),
+
+    loadImage("resources/images/Susie_Sprites/spr_susieb_act/0.png", "susie_act1"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_act/1.png", "susie_act2"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_act/2.png", "susie_act3"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_act/3.png", "susie_act4"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_act/4.png", "susie_act5"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_act/5.png", "susie_act6"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_act/6.png", "susie_act7"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_act/7.png", "susie_act8"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_act/8.png", "susie_act9"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_act/9.png", "susie_act10"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_act/10.png", "susie_act11"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_attack/0.png", "susie_attack1"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_attack/1.png", "susie_attack2"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_attack/2.png", "susie_attack3"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_attack/3.png", "susie_attack4"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_attack/4.png", "susie_attack5"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_attack/5.png", "susie_attack6"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_defend/0.png", "susie_defend1"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_defend/1.png", "susie_defend2"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_defend/2.png", "susie_defend3"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_defend/3.png", "susie_defend4"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_defend/4.png", "susie_defend5"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_defend/5.png", "susie_defend6"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_idle/0.png", "susie_idle1"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_idle/1.png", "susie_idle2"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_idle/2.png", "susie_idle3"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_idle/3.png", "susie_idle4"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_item/0.png", "susie_item1"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_item/1.png", "susie_item2"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_item/2.png", "susie_item3"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_item/3.png", "susie_item4"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_itemready/0.png", "susie_itemready1"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_itemready/1.png", "susie_itemready2"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_spell/0.png", "susie_spell1"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_spell/1.png", "susie_spell2"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_spell/2.png", "susie_spell3"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_spell/3.png", "susie_spell4"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_spell/4.png", "susie_spell5"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_spell/5.png", "susie_spell6"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_spell/6.png", "susie_spell7"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_spell/7.png", "susie_spell8"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_spell/8.png", "susie_spell9"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_spellready/0.png", "susie_spellready1"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_spellready/1.png", "susie_spellready2"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_spellready/2.png", "susie_spellready3"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_spellready/3.png", "susie_spellready4"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_actready.png", "susie_actready"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_attackready.png", "susie_attackready"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_defeat.png", "susie_defeat"),
+    loadImage("resources/images/Susie_Sprites/spr_susieb_hurt.png", "susie_hurt")
 }
 
 var setupMenus = function()
@@ -194,6 +245,7 @@ var setupObjects = function()
     //jevil x:477 y:134 to 124
     objects[1].push(setupSingleObject(477, 138, 0, 46*2, 48*2, jevilAnims, "Main"));
     objects[1].push(setupSingleObject(100, 100, 0, 63*2, 53*2, krisAnims, "Intro"));
+    objects[1].push(setupSingleObject(100, 110, 0, 103*2, 77*2, susieAnims, "Intro"));
 }
 
 var setupSingleObject = function(x, y, z, width, height, animations, currentAnim = null)

@@ -1,6 +1,7 @@
 //Final animation lists for all main objects
 var jevilAnims;
 var krisAnims;
+var susieAnims;
 
 var initAnims = function()
 {
@@ -140,6 +141,100 @@ var initAnims = function()
         {Img: images.kris_itemready, Tick: 1}
     ];
 
+    var susieIntroFrames = [
+        {Img: images.susie_attack1, Tick: 3},
+        {Img: images.susie_attack2, Tick: 3},
+        {Img: images.susie_attack3, Tick: 2},
+        {Img: images.susie_attack2, Tick: 2},
+        {Img: images.susie_attack1, Tick: 2}
+    ];
+
+    var susieActFrames = [
+        {Img: images.susie_act1, Tick: 3},
+        {Img: images.susie_act2, Tick: 3},
+        {Img: images.susie_act3, Tick: 3},
+        {Img: images.susie_act4, Tick: 3},
+        {Img: images.susie_act5, Tick: 3},
+        {Img: images.susie_act6, Tick: 3},
+        {Img: images.susie_act7, Tick: 3},
+        {Img: images.susie_act8, Tick: 3},
+        {Img: images.susie_act9, Tick: 3},
+        {Img: images.susie_act10, Tick: 3},
+        {Img: images.susie_act11, Tick: 3}
+    ];
+
+    var susieAttackFrames = [
+        {Img: images.susie_attack1, Tick: 3},
+        {Img: images.susie_attack2, Tick: 3},
+        {Img: images.susie_attack3, Tick: 3},
+        {Img: images.susie_attack4, Tick: 3},
+        {Img: images.susie_attack5, Tick: 3},
+        {Img: images.susie_attack6, Tick: 3}
+    ];
+
+    var susieDefendFrames = [
+        {Img: images.susie_defend1, Tick: 3},
+        {Img: images.susie_defend2, Tick: 3},
+        {Img: images.susie_defend3, Tick: 3},
+        {Img: images.susie_defend4, Tick: 3},
+        {Img: images.susie_defend5, Tick: 3},
+        {Img: images.susie_defend6, Tick: 3}
+    ];
+
+    var susieIdleFrames = [
+        {Img: images.susie_idle1, Tick: 3},
+        {Img: images.susie_idle2, Tick: 3},
+        {Img: images.susie_idle3, Tick: 3},
+        {Img: images.susie_idle4, Tick: 3}
+    ];
+
+    var susieItemFrames = [
+        {Img: images.susie_item1, Tick: 3},
+        {Img: images.susie_item2, Tick: 3},
+        {Img: images.susie_item3, Tick: 3},
+        {Img: images.susie_item4, Tick: 3}
+    ];
+
+    var susieItemReadyFrames = [
+        {Img: images.susie_itemready1, Tick: 3},
+        {Img: images.susie_itemready2, Tick: 3}
+    ];
+
+    var susieSpellFrames = [
+        {Img: images.susie_spell1, Tick: 3},
+        {Img: images.susie_spell2, Tick: 3},
+        {Img: images.susie_spell3, Tick: 3},
+        {Img: images.susie_spell4, Tick: 3},
+        {Img: images.susie_spell5, Tick: 3},
+        {Img: images.susie_spell6, Tick: 3},
+        {Img: images.susie_spell7, Tick: 3},
+        {Img: images.susie_spell8, Tick: 3},
+        {Img: images.susie_spell9, Tick: 3}
+    ];
+
+    var susieSpellReadyFrames = [
+        {Img: images.susie_spellready1, Tick: 3},
+        {Img: images.susie_spellready2, Tick: 3},
+        {Img: images.susie_spellready3, Tick: 3},
+        {Img: images.susie_spellready4, Tick: 3}
+    ];
+
+    var susieActReadyFrames = [
+        {Img: images.susie_actready, Tick: 3}
+    ];
+
+    var susieAttackReadyFrames = [
+        {Img: images.susie_attackready, Tick: 3}
+    ];
+
+    var susieDefeatFrames = [
+        {Img: images.susie_defeat, Tick: 3}
+    ];
+
+    var susieHurtFrames = [
+        {Img: images.susie_hurt, Tick: 3}
+    ];
+
     //setup final anim list
     jevilAnims = [
         {Name: "Dance", Frames: jevilDanceFrames, Type: loopTypes.LOOP, Exit: null},
@@ -165,6 +260,23 @@ var initAnims = function()
         {Name: "Defeat", Frames: krisDefeatFrames, Type: loopTypes.STILL, Exit: null},
         {Name: "Hurt", Frames: krisHurtFrames, Type: loopTypes.STILL, Exit: null},
         {Name: "Item_Ready", Frames: krisItemReadyFrames, Type: loopTypes.STILL, Exit: null}
+    ]
+
+    susieAnims = 
+    [
+        {Name: "Intro", Frames: susieIntroFrames, Type: loopTypes.SINGLE, Exit: "Idle"},
+        {Name: "Act", Frames: susieActFrames, Type: loopTypes.SINGLE, Exit: null},
+        {Name: "Attack", Frames: susieAttackFrames, Type: loopTypes.SINGLE, Exit: null},
+        {Name: "Defend", Frames: susieDefendFrames, Type: loopTypes.SINGLE, Exit: null},
+        {Name: "Idle", Frames: susieIdleFrames, Type: loopTypes.LOOP, Exit: null},
+        {Name: "Item", Frames: susieItemFrames, Type: loopTypes.SINGLE, Exit: null},
+        {Name: "Item_Ready", Frames: susieItemReadyFrames, Type: loopTypes.SINGLE, Exit: null},
+        {Name: "Spell", Frames: susieSpellFrames, Type: loopTypes.SINGLE, Exit: null},
+        {Name: "Spell_Ready", Frames: susieSpellReadyFrames, Type: loopTypes.LOOP, Exit: null},
+        {Name: "Act_Ready", Frames: susieActReadyFrames, Type: loopTypes.STILL, Exit: null},
+        {Name: "Attack_Ready", Frames: susieAttackReadyFrames, Type: loopTypes.STILL, Exit: null},
+        {Name: "Defeat", Frames: susieDefeatFrames, Type: loopTypes.STILL, Exit: null},
+        {Name: "Hurt", Frames: susieHurtFrames, Type: loopTypes.STILL, Exit: null}
     ]
 }
 
