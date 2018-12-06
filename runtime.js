@@ -28,16 +28,13 @@ var runGame = function()
 {
     requestAnimationFrame(runGame);
     //calc new dt
-    if(imagesLoading == 0 && loadFinished)
+    var dt = Date.now() - oldTime;
+    
+    if(dt >= 33) //loop at 30fps/ups
     {
-        var dt = Date.now() - oldTime;
-        
-        if(dt >= 33) //loop at 30fps/ups
-        {
-            oldTime = Date.now();
-            update(dt);
-            render(dt);
-        }
+        oldTime = Date.now();
+        update(dt);
+        render(dt);
     }
 }
 

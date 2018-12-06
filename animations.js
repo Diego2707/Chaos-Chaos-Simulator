@@ -2,6 +2,7 @@
 var jevilAnims;
 var krisAnims;
 var susieAnims;
+var ralseiAnims;
 
 var initAnims = function()
 {
@@ -141,6 +142,7 @@ var initAnims = function()
         {Img: images.kris_itemready, Tick: 1}
     ];
 
+    //susie
     var susieIntroFrames = [
         {Img: images.susie_attack1, Tick: 3},
         {Img: images.susie_attack2, Tick: 3},
@@ -235,6 +237,109 @@ var initAnims = function()
         {Img: images.susie_hurt, Tick: 3}
     ];
 
+    //ralsei
+    var ralseiActFrames = [
+        {Img: images.ralsei_act1, Tick: 3},
+        {Img: images.ralsei_act2, Tick: 3},
+        {Img: images.ralsei_act3, Tick: 3},
+        {Img: images.ralsei_act4, Tick: 3},
+        {Img: images.ralsei_act5, Tick: 3},
+        {Img: images.ralsei_act6, Tick: 3},
+        {Img: images.ralsei_act7, Tick: 3},
+        {Img: images.ralsei_act8, Tick: 3},
+        {Img: images.ralsei_act9, Tick: 3},
+        {Img: images.ralsei_act10, Tick: 3},
+        {Img: images.ralsei_act11, Tick: 3},
+        {Img: images.ralsei_act12, Tick: 3}
+    ];
+
+    var ralseiAttackFrames = [
+        {Img: images.ralsei_attack1, Tick: 3},
+        {Img: images.ralsei_attack2, Tick: 3},
+        {Img: images.ralsei_attack3, Tick: 3},
+        {Img: images.ralsei_attack4, Tick: 3},
+        {Img: images.ralsei_attack5, Tick: 3},
+        {Img: images.ralsei_attack6, Tick: 3},
+    ];
+
+    var ralseiIntroFrames = [
+        {Img: images.ralsei_intro1, Tick: 3},
+        {Img: images.ralsei_intro2, Tick: 3},
+        {Img: images.ralsei_intro3, Tick: 3},
+        {Img: images.ralsei_intro4, Tick: 3},
+        {Img: images.ralsei_intro5, Tick: 3},
+        {Img: images.ralsei_intro6, Tick: 3},
+        {Img: images.ralsei_intro7, Tick: 3},
+        {Img: images.ralsei_intro8, Tick: 3},
+        {Img: images.ralsei_intro9, Tick: 3}
+    ];
+
+    var ralseiDefendFrames = [
+        {Img: images.ralsei_defend1, Tick: 3},
+        {Img: images.ralsei_defend2, Tick: 3},
+        {Img: images.ralsei_defend3, Tick: 3},
+        {Img: images.ralsei_defend4, Tick: 3},
+        {Img: images.ralsei_defend5, Tick: 3},
+        {Img: images.ralsei_defend6, Tick: 3},
+        {Img: images.ralsei_defend7, Tick: 3},
+        {Img: images.ralsei_defend8, Tick: 3}
+    ];
+
+    var ralseiIdleFrames = [
+        {Img: images.ralsei_idle1, Tick: 3},
+        {Img: images.ralsei_idle2, Tick: 3},
+        {Img: images.ralsei_idle3, Tick: 3},
+        {Img: images.ralsei_idle4, Tick: 3},
+        {Img: images.ralsei_idle5, Tick: 3}
+    ];
+
+    var ralseiItemFrames = [
+        {Img: images.ralsei_item1, Tick: 3},
+        {Img: images.ralsei_item2, Tick: 3},
+        {Img: images.ralsei_item3, Tick: 3},
+        {Img: images.ralsei_item4, Tick: 3},
+        {Img: images.ralsei_item5, Tick: 3},
+        {Img: images.ralsei_item6, Tick: 3},
+        {Img: images.ralsei_item7, Tick: 3},
+        {Img: images.ralsei_item8, Tick: 3}
+    ];
+
+    var ralseiSpellFrames = [
+        {Img: images.ralsei_spell1, Tick: 3},
+        {Img: images.ralsei_spell2, Tick: 3},
+        {Img: images.ralsei_spell3, Tick: 3},
+        {Img: images.ralsei_spell4, Tick: 3},
+        {Img: images.ralsei_spell5, Tick: 3},
+        {Img: images.ralsei_spell6, Tick: 3},
+        {Img: images.ralsei_spell7, Tick: 3},
+        {Img: images.ralsei_spell8, Tick: 3},
+        {Img: images.ralsei_spell9, Tick: 3},
+        {Img: images.ralsei_spell10, Tick: 3},
+    ];
+
+    var ralseiSpellReadyFrames = [
+        {Img: images.ralsei_spellready1, Tick: 3},
+        {Img: images.ralsei_spellready2, Tick: 3},
+        {Img: images.ralsei_spellready3, Tick: 3},
+        {Img: images.ralsei_spellready4, Tick: 3},
+    ];
+
+    var ralseiActReadyFrames = [
+        {Img: images.ralsei_actready, Tick: 3}
+    ];
+
+    var ralseiAttackReadyFrames = [
+        {Img: images.ralsei_attackready, Tick: 3}
+    ];
+
+    var ralseiDefeatFrames = [
+        {Img: images.ralsei_defeat, Tick: 3}
+    ];
+    
+    var ralseiItemReadyFrames = [
+        {Img: images.ralsei_itemready, Tick: 3}
+    ];
+
     //setup final anim list
     jevilAnims = [
         {Name: "Dance", Frames: jevilDanceFrames, Type: loopTypes.LOOP, Exit: null},
@@ -260,7 +365,7 @@ var initAnims = function()
         {Name: "Defeat", Frames: krisDefeatFrames, Type: loopTypes.STILL, Exit: null},
         {Name: "Hurt", Frames: krisHurtFrames, Type: loopTypes.STILL, Exit: null},
         {Name: "Item_Ready", Frames: krisItemReadyFrames, Type: loopTypes.STILL, Exit: null}
-    ]
+    ];
 
     susieAnims = 
     [
@@ -277,7 +382,22 @@ var initAnims = function()
         {Name: "Attack_Ready", Frames: susieAttackReadyFrames, Type: loopTypes.STILL, Exit: null},
         {Name: "Defeat", Frames: susieDefeatFrames, Type: loopTypes.STILL, Exit: null},
         {Name: "Hurt", Frames: susieHurtFrames, Type: loopTypes.STILL, Exit: null}
-    ]
+    ];
+
+    ralseiAnims = [
+        {Name: "Intro", Frames: ralseiIntroFrames, Type: loopTypes.SINGLE, Exit: "Idle"},
+        {Name: "Act", Frames: ralseiActFrames, Type: loopTypes.SINGLE, Exit: null},
+        {Name: "Attack", Frames: ralseiAttackFrames, Type: loopTypes.SINGLE, Exit: null},
+        {Name: "Defend", Frames: ralseiDefendFrames, Type: loopTypes.SINGLE, Exit: null},
+        {Name: "Idle", Frames: ralseiIdleFrames, Type: loopTypes.LOOP, Exit: null},
+        {Name: "Item", Frames: ralseiItemFrames, Type: loopTypes.SINGLE, Exit: null},
+        {Name: "Item_Ready", Frames: ralseiItemReadyFrames, Type: loopTypes.SINGLE, Exit: null},
+        {Name: "Spell", Frames: ralseiSpellFrames, Type: loopTypes.SINGLE, Exit: null},
+        {Name: "Spell_Ready", Frames: ralseiSpellReadyFrames, Type: loopTypes.LOOP, Exit: null},
+        {Name: "Act_Ready", Frames: ralseiActReadyFrames, Type: loopTypes.STILL, Exit: null},
+        {Name: "Attack_Ready", Frames: ralseiAttackReadyFrames, Type: loopTypes.STILL, Exit: null},
+        {Name: "Defeat", Frames: ralseiDefeatFrames, Type: loopTypes.STILL, Exit: null}
+    ];
 }
 
 var setSingleSpriteImg = function(img)
